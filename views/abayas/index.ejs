@@ -1,0 +1,22 @@
+<!-- views/fruits/index.ejs -->
+
+ <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abayas app</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+<body>
+ <div class="index-header-div">
+     <h1>All Abayas</h1>
+     <a class="add-abaya" href="/abayas/new">Add Abaya</a>
+   </div>
+  <ul>
+    <% abayas.forEach(abaya => { %>
+    <a class="abaya-cards" href="/abayas/<%=abaya._id%>">
+      <li><%= abaya.name %></li>
+    </a>
+    <% }) %>
+  </ul>
+</body>

@@ -1,0 +1,37 @@
+
+
+<!-- views/fruits/new.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a Fruit</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <!-- the name attribute should match our model -->
+
+<body>
+ 
+  <h1>Add a new Abaya</h1>
+  <form action="/abayas" method="post">
+    <label for="name">Name of color:</label>
+    <input type="text" name="name" id="name" />
+    <br>
+     <div class="description-div">
+    <label for="description">description:</label>
+    <input type="text" name="description" id="description" />
+    </div>
+    <br>
+    <button type="submit"> Add Abaya </button>
+  </form>
+
+   <a class="abayas-index-link" href="/abayas">
+   <div class="abayas-link-text">Back to Abayas</div>
+ </a>
+</body>
+
+</html>
+

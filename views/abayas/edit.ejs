@@ -1,0 +1,30 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit <%= abaya.name %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+<body>
+
+  <h1>Edit <%= abaya.name %></h1>
+                                        <!-- the Override -->
+  <form action="/abayas/<%= abaya._id %>?_method=PUT" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" value="<%= abaya.name %>">
+    <br>
+     <div class="description-div">
+    <label for="description">description:</label>
+    <input type="text" name="description" id="description" />
+   
+    
+    </div>
+    <br>
+    <button type="submit">Update Abaya</button>
+  </form>
+
+  <a class="fruits-index-link" href="/fruits">
+   <div class="index-link-text">Back to Abaya</div>
+ </a>
+ 
+</body>

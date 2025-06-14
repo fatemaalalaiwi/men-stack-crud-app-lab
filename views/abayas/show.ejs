@@ -1,0 +1,32 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= abaya.name %></title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+  <div class="fruit-details">
+    <h1><%= abaya.name %></h1>
+ 
+  </div>
+  <div class="fruit-actions">
+    <form
+     class="delete-form"
+     action="/abayas/<%=abaya._id%>?_method=DELETE"
+     method="POST"
+   >
+     <button class="delete-button" type="submit">
+       Delete <%= abaya.name %>
+     </button>
+   </form>
+    <a class="edit-link" href="/abayas/<%= abaya._id %>/edit">
+     <div class="edit-text">Edit <%= abaya.name %></div>
+   </a>
+   
+  </div>
+
+  <a class="fruits-index-link" href="/abayas">
+    <div class="index-link-text">Back to Abayas</div>
+  </a>
+</body>
