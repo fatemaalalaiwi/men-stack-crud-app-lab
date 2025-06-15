@@ -16,15 +16,9 @@ router.get('/abayas/new', async (req,res)=>{
 
 
 // POST /abayas
-router.post("/abayas", async (req, res) => {
-  if (description === "colord") {
-    req.body.description= true;
-  } else {
-    req.body.description = false;
-  }
-  await Abaya.create(req.body);
-  res.redirect("/abaya/new");
-});
+// router.post("/abayas", async (req, res) => {
+  
+// });
 
 //read all -index page
 router.get("/abayas", async(req,res)=> {
@@ -34,7 +28,7 @@ res.render("abayas/index.ejs",{abayas})})
 // Read one - show page
 router.get("/abayas/:abayaId", async (req,res) =>{
   const abaya = await Abaya.findById(req.params.abayaId);
-  res.render("fruits/show.ejs", {abaya});
+  res.render("abayas/show.ejs", {abaya});
 });
 
 // GET - Edit page
