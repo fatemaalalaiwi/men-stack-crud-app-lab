@@ -4,7 +4,7 @@
 
 
 // to link
-const Abays = require('../models/abaya');
+const Abaya = require('../models/abaya');
 
 const router = require('express').Router();
 
@@ -16,9 +16,10 @@ router.get('/abayas/new', async (req,res)=>{
 
 
 // POST /abayas
-// router.post("/abayas", async (req, res) => {
-  
-// });
+router.post("/abayas", async (req, res) => {
+  await Abaya.create(req.body);
+  res.redirect("/abayas/new");
+});
 
 //read all -index page
 router.get("/abayas", async(req,res)=> {
@@ -39,11 +40,7 @@ router.get("/abayas/:abayaId/edit", async (req, res) =>{
 
 // PUT - Update 
 router.put("/abayas/:abayaId", async (req, res) => {
- if (description === "colord") {
-    req.body.description= true;
-  } else {
-    req.body.description = false;
-  }
+
   await Abaya.findByIdAndUpdate(req.params.abayaId, req.body);
   res.redirect(`/abayas/${req.params.abayaId}`);
 });
